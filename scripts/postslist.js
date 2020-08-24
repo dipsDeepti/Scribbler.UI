@@ -1,36 +1,31 @@
-var postList = [
-    {
-        heading:'let’ me be a ‘const’(ant), not a ‘var’(iable)!',
-        author: 'Srishti Gupta',
-        content: 'Since JavaScript does not have any type-checking, either of these keywords can be used to declare a variable of any type (datatype) in JavaScript. Though all the three keywords are used for the same purpose, they are different.'
-    },
-    {
-        heading:'let’ me be a ‘const’(ant), not a ‘var’(iable)!',
-        author: 'Srishti Gupta',
-        content: 'Since JavaScript does not have any type-checking, either of these keywords can be used to declare a variable of any type (datatype) in JavaScript. Though all the three keywords are used for the same purpose, they are different.'
-    },
-    {
-        heading:'let’ me be a ‘const’(ant), not a ‘var’(iable)!',
-        author: 'Srishti Gupta',
-        content: 'Since JavaScript does not have any type-checking, either of these keywords can be used to declare a variable of any type (datatype) in JavaScript. Though all the three keywords are used for the same purpose, they are different.'
-    }
-];
-
-/*
-for(var x=0;x<postList.length;x++)
-{
-    var post  = '<div class="card-post">'+
-    '<div class="post-username"><p>'+
-    postList[x].author +'</p></div>'+
-    '<div class="post-details"><div class="post-heading">'+    
-    '<span><i class="fa fa-trash deleteIcon"></i></span><p>'+
-    postList[x].heading + '</p></div><p class="post-content"'> +
-    postList[x].content + '</p><span><i class="fa fa-ellipsis-h postDetails"></i> </span>'+
-    '</div></div>'
-    $('#postList').appendChild(post);
-    //postContent.appendChild(post);  
+function navigateToPost() {
+    location.href = "post.html";
 }
-//postContent.appendChild('</div>');  
+var trashFunctions = function(numberOfPosts) {
 
-//document.getElementById('postList').innerHTML = postContent;
-*/
+    for (var i = 0; i < numberOfPosts; i++) {
+        // Get the trash modal
+        var modal = document.getElementsByClassName('trash-modal')[i];
+
+        // Get the div that opens the modal
+        var div = document.getElementsByClassName("deleteIcon")[i];
+
+        // When the user clicks on the trash icon, open the modal
+        div.onclick = function() {
+            modal.style.display = "block";
+        }
+
+        // Get the <span> element that closes the modal
+        var close = document.getElementsByClassName("trash-modal-button-no")[i];
+         //When the user clicks on `No` button, close the modal
+       close.onclick = function() {
+            modal.style.display = "none";
+        }
+    }
+}
+
+trashFunctions(3)
+        
+function modalDeleteClick(element){
+    element.closest("div.card-post").style.display = "none";
+}
