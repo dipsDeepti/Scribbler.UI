@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        Home - Scribbler
+    </title>
+    <!-- TODO: Include Font Awesome file here -->
+    <!-- TODO: Include Google Fonts file here -->
+    <link rel="stylesheet" type="text/css" href="./styles/index.css" />
+    <link rel="stylesheet" type="text/css" href="./styles/Common.css" />
+    <link href="https://fonts.googleapis.com/css?family=Montez&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body class="bg">
+    <!-- TODO: Include all your code for the header and home page here -->
+   <header></header>
+    <div class = "container">
+        <button onclick="openBlogList()" id ="AllPosts" class="primaryBtn">All Posts</button>
+        <button id = "createPostBtn" class="primaryBtn">Create Post</button>
+    </div>
+    <div id="signupmodal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span onclick="modalCloseClick(this)" id="closesigup" class="fa fa-times close"></span> 
+                <h2 class="modal-title">Get Started</h2>
+            </div>            
+            <form>               
+                    <label>Name</label>
+                    <input type="text" name="fullname" placeholder="Enter your name" required></input>
+
+                    <label>Username</label>
+                    <input type="text" name="username" placeholder="Enter your username" required></input>
+
+                    <label>Password</label>
+                    <input type="password" name="password" placeholder="Enter your password" required></input>
+
+                    <label>Confirm Password</label>
+                    <input type="password" name="conpassword" placeholder="Re-enter your password" required></input>
+
+                    <button class="modal-submit-btn">Sign Up</button>
+            </form>
+        </div>
+    </div>
+    <div id="signinmodal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span onclick="modalCloseClick(this)" class="fa fa-times close"></span> 
+                <h2 class="modal-title">Welcome Back!</h2>
+            </div>            
+            <form>
+                    <label>Username</label>
+                    <input type="text" name="username" placeholder="Enter your username" required></input>
+
+                    <label>Password</label>
+                    <input type="password" name="password" placeholder="Enter your password" required></input>
+                    <button class="modal-submit-btn">Sign In</button>
+                    <p>Not a member? <a onclick="openSignup()">Sign Up</a></p>
+            </form>
+        </div>
+    </div>
+    <div id="createpostmodal" class="modal"> 
+        <div class="modal-content">
+            <div class="modal-header">
+                <span onclick="modalCloseClick(this)" class="fa fa-times close"></span> 
+                <h2 class="modal-title">Pen Your Post</h2>
+            </div>  
+        <form>
+                <label>Title</label>
+                <input type="text" placeholder = "Enter title of your post"></input>
+
+                <label>Contents</label>
+                <textarea placeholder="Enter the contents of your post" rows="12"></textarea>
+
+                <button class="modal-submit-btn">Create</button>
+        </form>
+    </div>
+    </div>
+    <script src= "./scripts/Common.js"></script>
+    <script src= "./scripts/index.js"></script>
+</body>
+</html>
